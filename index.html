@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <meta name="google-signin-client_id" content="861555556798-02d7re2g6joos0g2mlp3nkifmlcu0fq8.apps.googleusercontent.com">
+        <meta name="google-signin-cookiepolicy" content="none">
+        <meta name="google-signin-scope" content="profile email">
         <title>Jamil Munazil</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -12,6 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="/__/firebase/9.6.2/firebase-app-compat.js"></script>
+        <script src="/__/firebase/9.6.2/firebase-auth-compat.js"></script>
+        <script src="/__/firebase/init.js"></script>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -214,37 +221,157 @@
                     <div class="col-lg-4 col-sm-6">
                         <img class="img-fluid" src="assets/comic/52.jpg" alt="..." />
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <img class="img-fluid" src="assets/comic/53.jpg" alt="..." />
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <img class="img-fluid" src="assets/comic/profil.jpg" alt="..." />
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- Call to action-->
-        <section class="page-section bg-dark text-white">
+        <section class="page-section bg-dark text-white" id="comen">
             <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Pondok Marhaenis Mukmin Suryakarta Nusantara!</h2>
-                <a class="btn btn-light btn-xl" href="https://suryakarta.github.io/home">More info!</a>
+                <h2 class="mb-4">Komentar!</h2>
+                <hr class="divider " />
             </div>
-        </section>
-        <!-- Contact-->
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Kami punya apa yang Anda butuhkan!</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">Jamil munazil adalah seorang ilustrator.</p>
-                        <a class="btn btn-light btn-xl" href="#services">More info!</a>
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 mb-5" id="coment">
+                    <div class="container px-4 px-lg-5 mb-2 bg-light">
+                        <p class="text-primary mb-0">Nama</p>
+                        <p class="text-black mb-0">Jamil Munazil</p>
+                        <p class="text-muted">12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="container px-4 px-lg-5 text-center">
+                    <hr class="divider " />
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <form id="contactForm">
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                        <p>Sign in with your Google account below.</p>
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="page-section" id="cover">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="col-lg-8 align-self-baseline">
+                            <p>
+                                Hallo teman-teman, terimakasih untuk waktunya membaca komik ini.<br>
+                                Nantikan karya-karya lainnya yang tidak kalah menarik.<br>
+                                Jangan lupa untuk share dan komentar sebagai bentuk dukungan untuk meningkatkan kualitas Author.
+                            </p>
+                            <p>
+                                Sampai jumpa di karya selanjutnya.<br>
+                                Salam hangat penuh cinta kasih dari Author
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <img class="img-fluid" src="assets/comic/avatar.png" alt="..." />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action-->
+        <!-- Contact-->
+        <!-- About-->
         <!-- Services-->
+        <section class="page-section bg-dark text-white" id="about">
+            <h2 class="text-center mt-0">About Me!</h2>
+            <hr class="divider " />
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 mb-5">
+                    <div class="col-lg-6 col-md-12 mt-5">
+                        <div class="container px-4 px-lg-5 text-center mb-5">
+                            <img class="img-fluid col-lg-4 col-md-4" src="assets/comic/profil%20of%20mili.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="container px-4 px-lg-5 mb-2">
+                            <p class="text-muted mb-0 text-primary">Nama</p>
+                            <h3 class="h4 mb-2">Jamil Munazil</h3>
+                        </div>
+                        <div class="container px-4 px-lg-5 mb-2">
+                            <p class="text-muted mb-0 text-primary">Lahir</p>
+                            <h3 class="h4 mb-2">Demak, 08-12-1995</h3>
+                        </div>
+                        <div class="container px-4 px-lg-5 mb-2">
+                            <p class="text-muted mb-0 text-primary">Alamat</p>
+                            <h3 class="h4 mb-2">Ronggosari, Kebonbatur RT 05/IV, Mranggen, Demak, Jawa Tengah</h3>
+                        </div>
+                        <div class="container px-4 px-lg-5 mb-2">
+                            <p class="text-muted mb-0 text-primary">Phone</p>
+                            <h3 class="h4 mb-2">+62 895 3322 373 14</h3>
+                        </div>
+                        <div class="container px-4 px-lg-5 mb-2">
+                            <p class="text-muted mb-0 text-primary">Email</p>
+                            <h3 class="h4 mb-2">jamil.munazil13@gmail.com</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-center mt-0">Story!</h2>
+            <hr class="divider " />
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="container col-lg-12 text-center">
+                    <div class="container col-lg-8 col-md-12">
+                        <p class="text-white-75">
+                            Jamil Munazil alias Monster Kelinci. Lahir dari pasangan bahagia Suwasis dan Sumiyarminah pada 08 desember 1995. Memiliki adik perempuan dan laki-laki. Saat ini masih melajang. Pernah bersekolah di TK, SD, SMP, dan SMA. Setelah sebelum lulus SMA telah bekerja sebagai tenaga professional untuk mendistribusikan es teh kepada pelanggan yang terletak di depan SMA tersebut. Kemudian juga pernah menjadi agen teknisi pemasangan serta servis AC. Saat ini masih berstatus sebagai mahasiswa SENI RUPA UNNES. Hal yang disukai yaitu menonton film yang romantic. Musik yang disukai bervariasi, kebanyakan rock n' roll dan kasidah. Makanan favorit adalah nasi dan mendoan. Cita-cita, hidup bahagia bersama istri yang setia dan memiliki dua orang anak perempuan dan laki-laki. Namun sayangnya hal itu cukup sulit karena lebih sering ditolak daripada diterima oleh perempuan, dan biasanya kisah cinta juga berjalan singkat dan berakhir tragis. Bahkan pernah ditinggal menikah dengan pria lain yang lebih mapan, tampan, dan cukup. Hal yang dilakukan saat ini ialah bekerja secara freelance di bidang ilustrasi dan desain, demi menabung untuk modal menikah dimasa depan.<br>Aamiin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section bg-primary" id="job">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0 text-white">Collection of all my projects!</h2>
+                <hr class="divider divider-light" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5 h-100">
+                            <p class="text-white-75 mt-5">Pameran</p>
+                            <hr class="divider divider-light" />
+                            <h3 class="h4 mb-2 text-white">ABOUT ME</h3>
+                            <p class="text-white-75 mb-0">B6 UNNES</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5 h-100">
+                            <p class="text-white-75 mt-5">Pameran</p>
+                            <hr class="divider divider-light" />
+                            <h3 class="h4 mb-2 text-white">TRANSREVOLUTIONER CARNIVAL</h3>
+                            <p class="text-white-75 mb-0">CAFE KINGKONG</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5 h-100">
+                            <p class="text-white-75 mt-5">Pameran</p>
+                            <hr class="divider divider-light" />
+                            <h3 class="h4 mb-2 text-white">GUYUB RUPA #6</h3>
+                            <p class="text-white-75 mb-0">KOTA LAMA, SEMARANG</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5 h-100">
+                            <p class="text-white-75 mt-5">Pameran</p>
+                            <hr class="divider divider-light" />
+                            <h3 class="h4 mb-2 text-white">RUANG X WAKTU</h3>
+                            <p class="text-white-75 mb-0">NIMA ART SPACE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">Layanan kami!</h2>
@@ -279,6 +406,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Pondok Marhaenis Mukmin Suryakarta Nusantara!</h2>
+                <a class="btn btn-light btn-xl" href="https://suryakarta.github.io/home">More info!</a>
             </div>
         </section>
         <section class="page-section" id="contact">
