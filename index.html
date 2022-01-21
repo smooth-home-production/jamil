@@ -15,38 +15,21 @@ limitations under the License.
 <head>
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-    Note that Google Sign In does not work from a file URL. You will need to make
-    this page available from a web server, either from localhost or using Firebase
-    Hosting.
-    Whichever domain it is running on, you'll have to add the origin for that domain
-    in the Google Developer Console: https://console.developers.google.com, search
-    for Credentials and create a new credential > OAuth client ID > web application,
-    and set the domain as an authorised origin (e.g. http://localhost:8000 or https://foo.bar).
-    -->
-  <!-- [START google_config] -->
-  <!-- **********************************************
-       * TODO(DEVELOPER): Use your Client ID below. *
-       ********************************************** -->
-  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID">
-  <meta name="google-signin-cookiepolicy" content="single_host_origin">
-  <meta name="google-signin-scope" content="profile email">
-  <!-- [END google_config] -->
-  <title>Google Sign In Example</title>
-
-  <!-- Material Design Theming -->
+        <meta name="google-signin-client_id" content="861555556798-02d7re2g6joos0g2mlp3nkifmlcu0fq8.apps.googleusercontent.com">
+        <meta name="google-signin-cookiepolicy" content="single_host_origin">
+        <meta name="google-signin-scope" content="profile email">
+        <title>Jamil Munazil</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-
   <link rel="stylesheet" href="main.css">
-
-  <!-- Google Sign In -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-  <!-- Import and configure the Firebase SDK -->
-  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
   <script src="/__/firebase/9.6.2/firebase-app-compat.js"></script>
   <script src="/__/firebase/9.6.2/firebase-auth-compat.js"></script>
   <script src="/__/firebase/init.js"></script>
